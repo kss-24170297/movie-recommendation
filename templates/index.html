@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>映画推薦システム</title>
+    <!-- 見た目を整えるためのCSS（Bootstrapなど使うと楽です） -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h2>お好きな映画を3つ選択してください</h2>
+    
+    <form action="/recommend" method="post">
+        <div class="form-group">
+            <label>1つ目の映画:</label>
+            <select name="movie1" class="form-control">
+                <option value="">-- 映画を選択してください --</option>
+                {% for title in movies %}
+                <option value="{{ title }}">{{ title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label>2つ目の映画:</label>
+            <select name="movie2" class="form-control">
+                <option value="">-- 映画を選択してください --</option>
+                {% for title in movies %}
+                <option value="{{ title }}">{{ title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label>3つ目の映画:</label>
+            <select name="movie3" class="form-control">
+                <option value="">-- 映画を選択してください --</option>
+                {% for title in movies %}
+                <option value="{{ title }}">{{ title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">オススメ映画を表示</button>
+    </form>
+</body>
+</html>
